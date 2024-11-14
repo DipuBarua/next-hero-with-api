@@ -2,6 +2,15 @@ import { getPosts } from '@/services/postApi';
 import Link from 'next/link';
 import React from 'react';
 
+// SEO 
+export const metadata = {
+    // title: "Posts..",
+    title: {
+        absolute: "Posts",
+    },
+    description: "posts page",
+};
+
 const PostsPage = async () => {
 
     const postData = await getPosts();

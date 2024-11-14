@@ -1,5 +1,20 @@
 import React from 'react';
 
+
+// SEO - Dynamic 
+export const generateMetadata = async ({ params }) => {
+    const res = await fetch(`https://jsonplaceholder.typicode.com/posts/${params.id}`);
+    const postData = await res.json();
+    return {
+        title: {
+            absolute: `${postData.title}`,
+        },
+        description: postData.body,
+        keywords: postData.body.split(' '),
+    };
+}
+//note: in dynamic metadata seo function name(by default) will be: generateMetadata()
+
 const getDetailsPost = async (Id) => {
     const res = await fetch(`https://jsonplaceholder.typicode.com/posts/${Id}`);
     const data = await res.json();

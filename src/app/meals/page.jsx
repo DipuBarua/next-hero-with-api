@@ -2,6 +2,13 @@ import Meals from '@/components/Meals';
 import React from 'react';
 import styles from "./styles.module.css";
 
+// SEO
+export const metadata = {
+    title: "Meals",
+    description: "meals page",
+    keywords: ["meals", "meals page"]
+};
+
 const MealsPage = () => {
     return (
         <div className=' m-5 p-3 border border-black rounded-md'>
