@@ -1,0 +1,14 @@
+.font_orange{
+    color: orange;
+}
+
+.text_large{
+    font-size: 2rem;
+}
+
+.font_style{
+    color: orangered;
+    font-size: 1rem;
+    font-weight: 700;
+    font-style: italic;
+}

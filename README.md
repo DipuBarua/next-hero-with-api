@@ -7,4 +7,11 @@
 - Client side data fetching (CSR) technique in nextJs
 - error handling to data fetch
 - set image configure to next.config to implement fetched images.
+- styling and css modules
+- 
 
+
+
+### Follow the next js documentation
+[https://nextjs.org/docs]
+- using app router
