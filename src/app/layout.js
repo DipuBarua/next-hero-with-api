@@ -1,18 +1,10 @@
-import localFont from "next/font/local";
+import { Inter, Roboto } from 'next/font/google'
 import "./globals.css";
 import Navbar from "@/components/Navbar";
 import Footer from "@/components/Footer";
 
-const geistSans = localFont({
-  src: "./fonts/GeistVF.woff",
-  variable: "--font-geist-sans",
-  weight: "100 900",
-});
-const geistMono = localFont({
-  src: "./fonts/GeistMonoVF.woff",
-  variable: "--font-geist-mono",
-  weight: "100 900",
-});
+const roboto = Roboto({ weight: ['400', '500', '700', '900'], subsets: ['latin'], display: 'swap' })
+const inter = Inter({ weight: ['400', '500', '700', '900'], subsets: ['latin'] })
 
 export const metadata = {
   // title: "Next Hero | API",
@@ -26,9 +18,7 @@ export const metadata = {
 export default function RootLayout({ children }) {
   return (
     <html lang="en">
-      <body
-        className={`${geistSans.variable} ${geistMono.variable} antialiased`}
-      >
+      <body className={inter.className}>
         <Navbar></Navbar>
 
         <div className=" container mx-auto">
