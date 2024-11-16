@@ -1,7 +1,7 @@
 # Explore Next.js with API
 - [Learn Basic next js with api]
-- [Learn Metadata SEO]
-- 
+- [Learn Metadata SEO, Optimization, Caching]
+
 
 ## Project: next-hero-with-api
 - Data fetching with SSR
@@ -12,9 +12,10 @@
 - styling and css modules
 - Metadata SEO :  title-static seo, dynamic 
 - Image Optimization | Font Optimization
+- Caching and Revalidating
+- loader with api data ( in posts page)
 
 
 
 ### Follow the next js documentation
-[https://nextjs.org/docs]
-- using app router
+[https://nextjs.org/docs] - using app router
