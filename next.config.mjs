@@ -10,16 +10,16 @@ const nextConfig = {
             },
         ],
     },
-    redirects: async () => {
-        return [
-            {
-                // Basic redirect
-                source: '/about',
-                destination: '/posts',
-                permanent: true,
-            }
-        ]
-    }
+    // redirects: async () => {
+    //     return [
+    //         {
+    //             // Basic redirect
+    //             source: '/about',
+    //             destination: '/posts',
+    //             permanent: true,
+    //         }
+    //     ]
+    // }
 
 };
 
