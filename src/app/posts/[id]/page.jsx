@@ -3,7 +3,7 @@ import React from 'react';
 
 // SEO - Dynamic 
 export const generateMetadata = async ({ params }) => {
-    const res = await fetch(`https://jsonplaceholder.typicode.com/posts/${params.id}`);
+    const res = await fetch(`${process.env.NEXT_PUBLIC_API_URL}/posts/${params.id}`);
     const postData = await res.json();
     return {
         title: {
@@ -16,7 +16,7 @@ export const generateMetadata = async ({ params }) => {
 //note: in dynamic metadata seo function name(by default) will be: generateMetadata()
 
 const getDetailsPost = async (Id) => {
-    const res = await fetch(`https://jsonplaceholder.typicode.com/posts/${Id}`);
+    const res = await fetch(`${process.env.NEXT_PUBLIC_API_URL}/posts/${Id}`);
     const data = await res.json();
     return data;
 }
