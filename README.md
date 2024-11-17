@@ -16,7 +16,9 @@
 - loader with api data ( in posts page)
 - Redirection(in next.config, postApi)
 - Environment Variables(.env.local file will not uploaded in github)
-- Deploy in vercel connecting github
+- Deployed in vercel with connecting github.
+
+#### Live: https://next-hero-with-api.vercel.app/
 
 ### Follow the next js documentation
 [https://nextjs.org/docs] - using app router

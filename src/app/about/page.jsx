@@ -2,20 +2,20 @@ import React from 'react';
 
 const getTime = async () => {
     //in every click, will get update.
-    // const res = await fetch("http://localhost:3000/time", { cache: "no-store" });
+    const res = await fetch("http://localhost:3000/time", { cache: "no-store" });
 
     //after every 5sec, will get update
     // const res = await fetch("http://localhost:3000/time", { next: { revalidate: 5 } });
 
-    // const data = await res.json();
-    // return data.currentTime;
+    const data = await res.json();
+    return data.currentTime;
 }
 const AboutPage = async () => {
-    // const localTime = await getTime();
+    const localTime = await getTime();
     return (
         <div className=' min-h-screen'>
             <p>about page.....</p>
-            {/* <h1 className=' py-5 text-2xl text-red-400 font-black'>Local Time: {localTime}</h1> */}
+            <h1 className=' py-5 text-2xl text-red-400 font-black'>Local Time: {localTime}</h1>
         </div>
     );
 };
