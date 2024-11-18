@@ -14,7 +14,7 @@ const nextConfig = {
         return [
             {
                 // Basic redirect
-                source: '/about',
+                source: '/login',
                 destination: '/',
                 permanent: true,
             }

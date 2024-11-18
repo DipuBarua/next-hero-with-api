@@ -1,6 +1,7 @@
 # Explore Next.js with API
 - [Learn Basic next js with api]
 - [Learn Metadata SEO, Optimization, Caching]
+- [Learn Authentication with NextAuth]
 
 
 ## Project: next-hero-with-api
@@ -17,6 +18,8 @@
 - Redirection(in next.config, postApi)
 - Environment Variables(.env.local file will not uploaded in github)
 - Deployed in vercel with connecting github.
+
+- Handling API routes(GET,POST,PATCH,DELETE) in comments page.
 
 #### Live: https://next-hero-with-api.vercel.app/
 
