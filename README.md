@@ -20,8 +20,11 @@
 - Deployed in vercel with connecting github.
 
 - Handling API routes(GET,POST,PATCH,DELETE) in comments page.
+- NextAuth | Setup Credentials Email Provider.
+- 
 
 #### Live: https://next-hero-with-api.vercel.app/
 
 ### Follow the next js documentation
 [https://nextjs.org/docs] - using app router
+[https://next-auth.js.org/] - NextAuth.js
