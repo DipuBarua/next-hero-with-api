@@ -21,10 +21,10 @@
 
 - Handling API routes(GET,POST,PATCH,DELETE) in comments page.
 - NextAuth | Setup Credentials Email Provider.
-- 
+- Get NextAuth Session data in client & server components.(navbar,about page)
 
 #### Live: https://next-hero-with-api.vercel.app/
 
 ### Follow the next js documentation
-[https://nextjs.org/docs] - using app router
-[https://next-auth.js.org/] - NextAuth.js
+- [https://nextjs.org/docs] - using app router
+- [https://next-auth.js.org/] - NextAuth.js

@@ -1,4 +1,6 @@
+import { getServerSession } from 'next-auth';
 import React from 'react';
+import { authOptions } from '../api/auth/[...nextauth]/route';
 
 const getTime = async () => {
     //in every click, will get update.
@@ -10,7 +12,12 @@ const getTime = async () => {
     const data = await res.json();
     return data.currentTime;
 }
+
+
 const AboutPage = async () => {
+    const session = await getServerSession(authOptions)//we can only use session hook in client side. In server side we have to use-- getServerSession(auth).   
+    console.log([session]);
+
     const localTime = await getTime();
     return (
         <div className=' min-h-screen'>

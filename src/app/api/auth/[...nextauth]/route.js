@@ -1,7 +1,10 @@
 import NextAuth from "next-auth";
 import CredentialsProvider from "next-auth/providers/credentials"
 
-const handler = NextAuth({
+export const authOptions = {
+
+    secret: process.env.NEXT_PUBLIC_AUTH_SECRET,
+
     session: {
         strategy: "jwt"
     },
@@ -43,7 +46,9 @@ const handler = NextAuth({
 
         })
     ]
-});
+}
+
+const handler = NextAuth(authOptions);
 
 //user's data set created
 const users = [
