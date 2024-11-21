@@ -6,7 +6,8 @@ export const authOptions = {
     secret: process.env.NEXT_PUBLIC_AUTH_SECRET,
 
     session: {
-        strategy: "jwt"
+        strategy: "jwt",
+        maxAge: 30 * 24 * 60 * 60,
     },
     providers: [
         CredentialsProvider({
@@ -45,7 +46,24 @@ export const authOptions = {
             }
 
         })
-    ]
+    ],
+
+    // Integrate Authentication-->
+    //callbacks obj is used to manipulate session to access more data of users.
+    callbacks: {
+        async jwt({ token, account, user }) {
+            // Persist the OAuth access_token and or the user id to the token right after signin
+            if (account) {
+                token.type = user.type
+            }
+            return token
+        },
+
+        async session({ session, token }) {
+            session.user.type = token.type
+            return session;
+        },
+    }
 }
 
 const handler = NextAuth(authOptions);
@@ -56,19 +74,25 @@ const users = [
         id: 1,
         name: "apple",
         email: "apple@gmail.com",
-        password: "123"
+        password: "123",
+        type: "admin",
+        image: "https://picsum.photos/200/300"
     },
     {
         id: 2,
         name: "banana",
         email: "banana@gmail.com",
-        password: "123"
+        password: "123",
+        type: "user",
+        image: "https://picsum.photos/200/300"
     },
     {
         id: 3,
         name: "orange",
         email: "orange@gmail.com",
-        password: "123"
+        password: "123",
+        type: "modaretor",
+        image: "https://picsum.photos/200/300"
     },
 ]
 export { handler as GET, handler as POST }

@@ -22,6 +22,9 @@
 - Handling API routes(GET,POST,PATCH,DELETE) in comments page.
 - NextAuth | Setup Credentials Email Provider.
 - Get NextAuth Session data in client & server components.(navbar,about page)
+- Integrate Authentication and register with email password (in api route)
+
+
 
 #### Live: https://next-hero-with-api.vercel.app/
 

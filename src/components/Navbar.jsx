@@ -1,5 +1,6 @@
 "use client"
 import { useSession } from 'next-auth/react';
+import Image from 'next/image';
 import Link from 'next/link';
 import { usePathname, useRouter } from 'next/navigation';
 import React from 'react';
@@ -57,6 +58,19 @@ const Navbar = () => {
                     }
 
                 </ul>
+
+                <div className=' border-l-4 px-2'>
+                    <div className=' px-2 rounded-full'>
+                        <Image
+                            alt={session?.data?.user?.name}
+                            src={session?.data?.user?.image}
+                            height={30}
+                            width={30} />
+                    </div>
+
+                    <h1>{session?.data?.user?.name}</h1>
+                    <h1>{session?.data?.user?.type}</h1>
+                </div>
             </nav>
         </div>
     );
