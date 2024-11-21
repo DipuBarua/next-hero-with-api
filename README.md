@@ -23,6 +23,7 @@
 - NextAuth | Setup Credentials Email Provider.
 - Get NextAuth Session data in client & server components.(navbar,about page)
 - Integrate Authentication and register with email password (in api route)
+- Sign-in with email and password | with using middleware token.
 
 
 

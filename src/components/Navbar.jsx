@@ -1,5 +1,5 @@
 "use client"
-import { useSession } from 'next-auth/react';
+import { signOut, useSession } from 'next-auth/react';
 import Image from 'next/image';
 import Link from 'next/link';
 import { usePathname, useRouter } from 'next/navigation';
@@ -32,10 +32,14 @@ const Navbar = () => {
             title: "Gallery",
             path: "/gallery"
         },
+        {
+            title: "Dashboard",
+            path: "/dashboard"
+        },
     ]
 
     const handler = () => {
-        router.push("/login")
+        router.push("/api/auth/signin")
     }
 
     return (
@@ -51,22 +55,20 @@ const Navbar = () => {
                     >{link.title}</Link>)}
 
                     {
-                        session?.status === "authenticated" ?
+                        session?.status !== "authenticated" ?
                             <button onClick={handler} className=" text-2xl text-green-600 p-1 border-2 border-green-500">LogIn</button>
                             :
-                            <button onClick={handler} className=" text-2xl text-orange-600 p-1 border-2 border-red-600 bg-orange-50">LogOut</button>
+                            <button onClick={() => signOut()} className=" text-2xl text-orange-600 p-1 border-2 border-red-600 bg-orange-50">LogOut</button>
                     }
 
                 </ul>
 
                 <div className=' border-l-4 px-2'>
-                    <div className=' px-2 rounded-full'>
-                        <Image
-                            alt={session?.data?.user?.name}
-                            src={session?.data?.user?.image}
-                            height={30}
-                            width={30} />
-                    </div>
+                    <Image className=' rounded-full h-1/2 px-2'
+                        alt={session?.data?.user?.name}
+                        src={session?.data?.user?.image}
+                        height={30}
+                        width={50} />
 
                     <h1>{session?.data?.user?.name}</h1>
                     <h1>{session?.data?.user?.type}</h1>
