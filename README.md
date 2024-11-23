@@ -24,6 +24,7 @@
 - Get NextAuth Session data in client & server components.(navbar,about page)
 - Integrate Authentication and register with email password (in api route)
 - Sign-in with email and password | with using middleware token.
+- Sign in with GitHub and Google | with connecting mongoDB (lib, sign-up page)
 
 
 

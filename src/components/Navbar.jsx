@@ -54,12 +54,23 @@ const Navbar = () => {
                         className={`${pathName === link.path && " text-blue-600 underline"}`}
                     >{link.title}</Link>)}
 
-                    {
-                        session?.status !== "authenticated" ?
-                            <button onClick={handler} className=" text-2xl text-green-600 p-1 border-2 border-green-500">LogIn</button>
-                            :
-                            <button onClick={() => signOut()} className=" text-2xl text-orange-600 p-1 border-2 border-red-600 bg-orange-50">LogOut</button>
-                    }
+
+                    <div className=' flex'>
+                        {/* sign up  */}
+                        <Link href={'/api/auth/signup'}>
+                            <button className=" text-2xl text-white font-bold p-1 mx-2 bg-blue-500 border-2 border-white bg-opacity-40">SignUp</button>
+                        </Link>
+
+                        {
+                            session?.status !== "authenticated" ?
+                                <div>
+
+                                    <button onClick={handler} className=" text-2xl text-white p-1 bg-green-500 border-2 border-white bg-opacity-40">LogIn</button>
+                                </div>
+                                :
+                                <button onClick={() => signOut()} className=" text-2xl text-orange-600 p-1 border-2 border-red-600 bg-orange-50">LogOut</button>
+                        }
+                    </div>
 
                 </ul>
 
