@@ -1,6 +1,8 @@
 import connectDB from "@/lib/connectDB";
 import NextAuth from "next-auth";
 import CredentialsProvider from "next-auth/providers/credentials"
+import GoogleProvider from "next-auth/providers/google";
+import GitHubProvider from "next-auth/providers/github";
 
 export const authOptions = {
 
@@ -37,9 +39,10 @@ export const authOptions = {
 
                 if (email) {
                     // const currentUser = users.find(user => user.email === email);
-                    const db = await connectDB();
 
+                    const db = await connectDB();
                     const currentUser = await db.collection('users').findOne({ email });
+
                     if (currentUser) {
                         if (currentUser.password === password) {
                             return currentUser;
@@ -49,7 +52,27 @@ export const authOptions = {
                 return null;
             }
 
-        })
+        }),
+
+
+        // NOTE: *****
+        //http://localhost:3000 >> is used only for development. after production it will not work. Take action:
+        //step-1: Need to change homePage url (use DOMAIN) in google/github configuration after production.[ go to NextAuth.js Doc.] 
+        //step-2: Authorized redirect URIs For production: https://{YOUR_DOMAIN}/api/auth/callback/google 
+
+
+        // Google provider 
+        GoogleProvider({
+            clientId: process.env.NEXT_PUBLIC_GOOGLE_CLIENT_ID,
+            clientSecret: process.env.NEXT_PUBLIC_GOOGLE_CLIENT_SECRET
+        }),
+
+        // GitHub provider 
+        GitHubProvider({
+            clientId: process.env.NEXT_PUBLIC_GITHUB_ID,
+            clientSecret: process.env.NEXT_PUBLIC_GITHUB_SECRET
+        }),
+
     ],
 
     // Integrate Authentication-->

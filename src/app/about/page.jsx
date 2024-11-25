@@ -4,7 +4,7 @@ import { authOptions } from '../api/auth/[...nextauth]/route';
 
 const getTime = async () => {
     //in every click, will get update.
-    const res = await fetch("http://localhost:3000/time", { cache: "no-store" });
+    const res = await fetch("https://next-hero-with-api.vercel.app//time", { cache: "no-store" });
 
     //after every 5sec, will get update
     // const res = await fetch("http://localhost:3000/time", { next: { revalidate: 5 } });
